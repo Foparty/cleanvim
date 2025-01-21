@@ -25,31 +25,29 @@ require("lazy").setup({
   },
   checker = {
     enabled = true,
-    notify = false
+    notify = false,
   },
   change_detection = {
-    notify = false
+    notify = false,
   },
   ui = {
-	  icons = vim.g.have_nerd_font and {} or {
-		  cmd = '⌘',
-		  config = '🛠',
-		  event = '📅',
-		  ft = '📂',
-		  init = '⚙',
-		  keys = '🗝',
-		  plugin = '🔌',
-		  runtime = '💻',
-		  require = '🌙',
-		  source = '📄',
-		  start = '🚀',
-		  task = '📌',
-		  lazy = '💤 ',
-	  },
+    icons = vim.g.have_nerd_font and {} or {
+      cmd = "⌘",
+      config = "🛠",
+      event = "📅",
+      ft = "📂",
+      init = "⚙",
+      keys = "🗝",
+      plugin = "🔌",
+      runtime = "💻",
+      require = "🌙",
+      source = "📄",
+      start = "🚀",
+      task = "📌",
+      lazy = "💤 ",
+    },
   },
-
 })
 
-vim.cmd [[colorscheme catppuccin]]
-
-
+-- vim.cmd [[colorscheme catppuccin]]
+vim.cmd([[colorscheme tokyonight]])

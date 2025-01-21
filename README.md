@@ -1,8 +1,1 @@
-# cleanvim
-
-## cosas de la vida
-
-## pero aqui no lo esta renderizando
-
-- [ ] cosas
-
+# My new simple Nvim config for web development
