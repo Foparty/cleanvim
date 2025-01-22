@@ -16,7 +16,7 @@ return {
     priority = 1000,
     config = function()
       require("tokyonight").setup({
-        transparent = true,
+        transparent = false,
       })
     end,
   },
