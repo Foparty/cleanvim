@@ -22,6 +22,12 @@ return {
           width = 0.99,
           height = 0.99,
           preview_cutoff = 60,
+          horizontal = {
+            -- Adjust these values to make the preview larger than the results
+            prompt_position = "top",
+            preview_width = 0.65, -- 75% of the available space for preview
+            results_width = 0.35, -- 25% for results
+          },
         },
         mappings = {
           i = {
