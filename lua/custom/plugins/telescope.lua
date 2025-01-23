@@ -60,7 +60,7 @@ return {
       local search_string = "[[" .. word .. "]]"
 
       -- Call grep_string with the modified search string
-      require('telescope.builtin').grep_string({ search = search_string })
+      require("telescope.builtin").grep_string({ search = search_string })
     end
     -- vim.keymap.set("n", "<leader>fk", search_tag, { desc = "[S]earch [K]eywords" })
     vim.keymap.set("n", "<leader>fg", builtin.live_grep, { desc = "[S]earch by [G]rep" })
@@ -70,7 +70,7 @@ return {
       builtin.buffers()
     end, { desc = "[ ] Find existing buffers" })
 
-
+    vim.keymap.set("n", "<leader>g3", builtin.git_bcommits, { desc = "[G]it [S]tatus" })
     -- It's also possible to pass additional configuration options.
     --  See `:help telescope.builtin.live_grep()` for information about particular keys
     vim.keymap.set("n", "<leader>f/", function()
@@ -90,7 +90,7 @@ return {
         prompt_title = "Find in Notes",
         cwd = "/Users/fo/notes",
       })
-    end, { desc = 'Find in external notes' })
+    end, { desc = "Find in external notes" })
     vim.keymap.set("n", "<leader>fp", function()
       builtin.live_grep({
         prompt_title = "Live Grep in Notes",
