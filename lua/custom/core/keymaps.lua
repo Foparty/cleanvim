@@ -1,5 +1,5 @@
 vim.keymap.set("n", "<Esc>", "<cmd>nohlsearch<CR>", { desc = "Clear search highlight" })
--- vim.keymap.set("n", ";", ":", { desc = "Use semicolon as colon" })
+vim.keymap.set("n", ";", ":", { desc = "Use semicolon as colon" })
 vim.keymap.set("i", "kj", "<Esc>:w<CR>", { desc = "Exit insert mode and save file" })
 
 -- Editing
