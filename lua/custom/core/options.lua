@@ -85,9 +85,6 @@ vim.cmd([[au BufNewFile,BufRead *.astro setf astro]])
 
 vim.opt.spelllang = "es"
 -- vim.opt.spell = true
-vim.g.single_quote = true
--- or for a specific buffer
-vim.api.nvim_buf_set_var(0, "single_quote", true)
 
 vim.api.nvim_create_autocmd("TextYankPost", {
 	desc = "Highlight when yanking (copying) text",
