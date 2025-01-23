@@ -39,7 +39,6 @@ vim.keymap.set("n", "<C-k>", "<C-w><C-k>", { desc = "Move focus to upper window"
 vim.keymap.set("n", "<leader>q", ":wqa!<CR>", { desc = "Save all and [q]uit" })
 -- vim.keymap.set('n', '<leader>e', ':up<CR>:Oil<CR>', { desc = ':Ex' })
 --
--- NOTE::This will only work with netrw
 vim.keymap.set("n", "<up>", function()
   local win_count = vim.fn.winnr("$")
   if win_count > 1 then
