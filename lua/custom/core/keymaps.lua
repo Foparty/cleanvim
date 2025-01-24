@@ -129,3 +129,6 @@ vim.api.nvim_create_user_command("CreateJournal", function()
 end, {})
 
 vim.keymap.set("n", "<leader>nj", ":CreateJournal<CR>", { desc = "[N]ew [J]ournal note" })
+-- code
+
+vim.keymap.set("n", "<leader>cm", ":Mason<CR>")
