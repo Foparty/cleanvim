@@ -63,6 +63,7 @@ return {
     vim.keymap.set("n", "<leader>ft", "<cmd>TodoTelescope<cr>")
     vim.keymap.set("n", "<leader>gh", builtin.git_bcommits, { desc = "[G]it [H]istory of current file" })
     vim.keymap.set("n", "<leader>gs", builtin.git_status, { desc = "[G]it [S]tatus" })
+    vim.keymap.set("n", "<leader>fc", builtin.colorscheme, { desc = "[F]ind [C]olorschemes" })
     vim.keymap.set("n", "<leader>fw", builtin.grep_string, { desc = "[S]earch current [W]ord" })
     vim.keymap.set("n", "<leader>fh", builtin.help_tags, { desc = "[S]earch [H]elp" })
     vim.keymap.set("n", "<leader>fk", builtin.keymaps, { desc = "[S]earch [K]eymaps" })
