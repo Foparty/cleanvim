@@ -1,7 +1,7 @@
 return {
 	{
 		"ggandor/leap.nvim",
-		-- TODO: conflicts with mini.surround and drives me crazy
+		-- BUG: conflicts with mini.surround and drives me crazy
 		enabled = false,
 		dependencies = {
 			{ "tpope/vim-repeat", event = "VeryLazy" },
