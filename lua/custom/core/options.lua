@@ -1,6 +1,7 @@
 vim.g.mapleader = " "
 vim.g.maplocalleader = " "
 
+vim.g.spellfile_URL = "https://ftp.nluug.nl/vim/runtime/spell/"
 -- Set to true if you have a Nerd Font installed and selected in the terminal
 vim.g.have_nerd_font = true
 -- [[ Setting options ]]
@@ -81,8 +82,14 @@ vim.opt.scrolloff = 10
 
 vim.cmd([[au BufNewFile,BufRead *.astro setf astro]])
 
-vim.opt.spelllang = "es"
+vim.opt.spelllang = { "en_us", "es" }
 -- vim.opt.spell = true
+vim.api.nvim_create_autocmd("FileType", {
+  pattern = { "html", "markdown", "text" },
+  callback = function()
+    vim.opt_local.spell = true
+  end,
+})
 
 vim.api.nvim_create_autocmd("TextYankPost", {
   desc = "Highlight when yanking (copying) text",

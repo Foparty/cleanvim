@@ -6,16 +6,18 @@ return {
       { "<c-space>", desc = "Increment Selection" },
       { "<bs>",      desc = "Decrement Selection", mode = "x" },
     },
-    require("nvim-treesitter.configs").setup({
-      incremental_selection = {
-        enable = true,
-        keymaps = {
-          init_selection = "<C-space>",
-          node_incremental = "<C-space>",
-          scope_incremental = false,
-          node_decremental = "<bs>",
+    config = function()
+      require("nvim-treesitter.configs").setup({
+        incremental_selection = {
+          enable = true,
+          keymaps = {
+            init_selection = "<C-space>",
+            node_incremental = "<C-space>",
+            scope_incremental = false,
+            node_decremental = "<bs>",
+          },
         },
-      },
-    }),
+      })
+    end,
   },
 }
