@@ -65,7 +65,7 @@ return {
           lualine_y = {
             "progress", --[[ { "location" }]]
           },
-          lualine_z = { words, time },
+          lualine_z = { time },
         },
         inactive_sections = {
           lualine_a = {},
