@@ -1,13 +1,16 @@
 return {
-  {
-    "OXY2DEV/markview.nvim",
-    enabled = false,
-    lazy = false,
-    config = function()
-      require("markview").setup({})
-      require("markview.extras.checkboxes").setup()
-      require("markview.extras.editor").setup()
-      require("markview.extras.headings").setup()
-    end,
-  },
+	{
+		"OXY2DEV/markview.nvim",
+		enabled = true,
+		lazy = false,
+		ft = "markdown",
+		config = function()
+			require("markview").setup({
+				hybrid_modes = { "n", "i" },
+			})
+			require("markview.extras.checkboxes").setup()
+			require("markview.extras.editor").setup({})
+			require("markview.extras.headings").setup()
+		end,
+	},
 }
