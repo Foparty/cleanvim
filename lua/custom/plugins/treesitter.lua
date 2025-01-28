@@ -8,6 +8,18 @@ return {
     },
     config = function()
       require("nvim-treesitter.configs").setup({
+        ensure_installed = {
+          "astro",
+          "c",
+          "lua",
+          "vim",
+          "vimdoc",
+          "query",
+          "markdown",
+          "markdown_inline",
+          "glimmer_javascript",
+          "glimmer_typescript",
+        },
         incremental_selection = {
           enable = true,
           keymaps = {
