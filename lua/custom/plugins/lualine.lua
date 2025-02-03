@@ -9,31 +9,9 @@ return {
       local function time()
         return os.date("%H:%M")
       end
-      local colors = {
-        red = "#ca1243",
-        grey = "#a0a1a7",
-        black = "#383a42",
-        white = "#f3f3f3",
-        light_green = "#83a598",
-        orange = "#fe8019",
-        green = "#8ec07c",
-      }
-      local theme = {
-        normal = {
-          a = { fg = colors.white, bg = colors.red },
-          b = { fg = colors.white, bg = colors.grey },
-          c = { fg = colors.black, bg = colors.white },
-          z = { fg = colors.white, bg = colors.black },
-        },
-        command = { a = { fg = colors.black, bg = colors.green } },
-        insert = { a = { fg = colors.black, bg = colors.orange } },
-        visual = { a = { fg = colors.black, bg = colors.orange } },
-        replace = { a = { fg = colors.black, bg = colors.green } },
-      }
       require("lualine").setup({
         options = {
           icons_enabled = true,
-          -- theme = theme,
           theme = "auto",
           component_separators = { left = "", right = "" },
           section_separators = { left = "", right = "" },
@@ -63,7 +41,7 @@ return {
             "filetype",
           },
           lualine_y = {
-            "progress", --[[ { "location" }]]
+            --[["progress",  { "location" }]]
           },
           lualine_z = { time },
         },
