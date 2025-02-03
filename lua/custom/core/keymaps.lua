@@ -49,11 +49,11 @@ vim.keymap.set("n", "<up>", function()
     vim.cmd("Oil")                   -- Open the file explorer (assuming Oil is a plugin or command)
   end
 end, { desc = "Close split or open file explorer if last window" })
-vim.keymap.set("n", "<C-q>", function()
-  vim.cmd("update")
-  vim.cmd("Oil")
-end, { desc = "Close split or open file explorer if last window" })
 
+vim.keymap.set("n", "<C-b>", function()
+  vim.cmd("update") -- Save changes (if any)
+  vim.cmd("Oil")   -- Open the file explorer (assuming Oil is a plugin or command)
+end, { desc = "Close split or open file explorer if last window" })
 vim.keymap.set("n", "<right>", "<C-w>v", { desc = "Split window vertically" })
 vim.keymap.set("n", "<down>", "<C-w>s", { desc = "Split window horizontally" })
 vim.keymap.set("n", "<left>", ":up!<CR>", { desc = "Save current file" }) -- Note: This command seems incorrect, should be ":w<CR>"
@@ -65,7 +65,7 @@ vim.keymap.set("n", "<leader>ka", ":%bd<CR>", { desc = "[K]ill [A]ll buffers" })
 vim.keymap.set("t", "<Esc><Esc>", "<C-\\><C-n>", { desc = "Exit terminal mode" })
 
 -- File Operations
-vim.keymap.set("n", "<space><space>x", ":so %<CR>", { desc = "Source current file" })
+vim.keymap.set("n", "<leader><leader>x", ":so %<CR>", { desc = "Source current file" })
 
 -- plugins system
 vim.keymap.set("n", "<leader>lz", ":Lazy<CR>")
@@ -104,6 +104,39 @@ end, {})
 
 vim.keymap.set("n", "<leader>nn", ":CreateNewNote<CR>", { noremap = true, silent = true, desc = "[N]ew [N]ote" })
 
+-- NOTE: create new message
+vim.api.nvim_create_user_command("CreateNewMessage", function()
+  -- Prompt for a custom filename
+  local filename = vim.fn.input("Enter note name:", "", "file")
+
+  -- Ensure the filename has a .md extension
+  if not filename:match("%.md$") then
+    filename = filename .. ".md"
+  end
+
+  local filepath = "~/messages/" .. filename
+  local expanded_filepath = vim.fn.expand(filepath)
+
+  -- Ensure directory exists
+  vim.fn.mkdir(vim.fn.fnamemodify(expanded_filepath, ":h"), "p")
+
+  -- Check if file exists
+  if vim.fn.filereadable(expanded_filepath) == 1 then
+    -- If the file exists, just open it
+    vim.cmd("edit " .. filepath)
+  else
+    -- If the file doesn't exist, create it
+    vim.fn.writefile({}, expanded_filepath, "b")
+    vim.cmd("edit " .. filepath)
+    -- Add a default line to avoid empty buffer
+    vim.api.nvim_buf_set_lines(0, 0, -1, true, { "# New Note" })
+  end
+
+  -- Move to end of buffer, insert two new lines, and start insert mode for both cases
+  vim.cmd("$ | put _ | put _ | startinsert")
+end, {})
+
+vim.keymap.set("n", "<leader>nm", ":CreateNewMessage<CR>", { noremap = true, silent = true, desc = "[N]ew [M]essage" })
 -- journal one
 vim.api.nvim_create_user_command("CreateJournal", function()
   local filename = "~/journal/" .. vim.fn.strftime("%d-%m-%Y") .. ".md"
