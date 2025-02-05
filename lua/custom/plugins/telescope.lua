@@ -94,13 +94,13 @@ return {
 			builtin.find_files({ cwd = vim.fn.stdpath("config"), prompt_title = "Config Files" })
 		end, { desc = "[S]earch [C]onfig files" })
 
-		vim.keymap.set("n", "<leader>fo", function()
+		vim.keymap.set("n", "<leader>fn", function()
 			builtin.find_files({
 				prompt_title = "Find in Notes",
 				cwd = "~/notes",
 			})
 		end, { desc = "Find in external notes" })
-		vim.keymap.set("n", "<leader>fp", function()
+		vim.keymap.set("n", "<leader>fm", function()
 			builtin.live_grep({
 				prompt_title = "Live Grep in Notes",
 				cwd = "~/notes",
