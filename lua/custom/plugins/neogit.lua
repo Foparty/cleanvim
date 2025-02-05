@@ -21,7 +21,7 @@ return {
       --
       -- vim.keymap.set("n", "<leader>gP", ":Neogit push<CR>", { silent = true, noremap = true })
       --
-      -- vim.keymap.set("n", "<leader>gb", ":Telescope git_branches<CR>", { silent = true, noremap = true })
+      vim.keymap.set("n", "<leader>gb", ":Telescope git_branches<CR>", { silent = true, noremap = true })
       --
       -- vim.keymap.set("n", "<leader>gB", ":G blame<CR>", { silent = true, noremap = true })
     end,
