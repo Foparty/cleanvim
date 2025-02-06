@@ -6,6 +6,7 @@ return {
 	dependencies = {
 		"nvim-lua/plenary.nvim",
 		"rcarriga/nvim-notify",
+		"debugloop/telescope-undo.nvim",
 		{
 			"nvim-telescope/telescope-fzf-native.nvim",
 			build = "make",
@@ -50,6 +51,8 @@ return {
 			},
 		})
 
+		require("telescope").load_extension("undo")
+		vim.keymap.set("n", "<leader>uh", "<cmd>Telescope undo<cr>", { desc = "[U]ndo [H]istory" })
 		-- Enable Telescope extensions if they are installed
 		pcall(require("telescope").load_extension, "fzf")
 		pcall(require("telescope").load_extension, "ui-select")
