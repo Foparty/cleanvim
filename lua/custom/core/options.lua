@@ -14,9 +14,9 @@ vim.g.netrw_icons = 1
 vim.opt.number = true
 vim.opt.relativenumber = true
 
-vim.opt.tabstop = 2 -- 2 spaces for tabs (prettier default)
-vim.opt.softtabstop = 2 -- 2 spaces for indent width (prettier default)
-vim.opt.shiftwidth = 2 -- 2 spaces for indent width
+vim.opt.tabstop = 2      -- 2 spaces for tabs (prettier default)
+vim.opt.softtabstop = 2  -- 2 spaces for indent width (prettier default)
+vim.opt.shiftwidth = 2   -- 2 spaces for indent width
 vim.opt.expandtab = true -- expand tab to spaces
 -- vim.opt.autoindent = true -- copy indent from current line when starting new one
 -- vim.opt.smartindent = true
@@ -31,7 +31,7 @@ vim.opt.conceallevel = 1 --something for obsidian
 --  Remove this option if you want your OS clipboard to remain independent.
 --  See `:help 'clipboard'`
 vim.schedule(function()
-	vim.opt.clipboard = "unnamedplus"
+  vim.opt.clipboard = "unnamedplus"
 end)
 
 -- Enable break indent
@@ -59,7 +59,7 @@ vim.opt.splitright = true
 vim.opt.splitbelow = true
 
 vim.opt.termguicolors = true
-vim.opt.background = "dark" -- colorschemes that can be light or dark will be made dark
+vim.opt.background = "dark"            -- colorschemes that can be light or dark will be made dark
 
 vim.opt.backspace = "indent,eol,start" -- allow backspace on indent, end of line or insert mode start position
 -- Keep signcolumn on by default
@@ -81,26 +81,20 @@ vim.opt.scrolloff = 10
 
 vim.cmd([[au BufNewFile,BufRead *.astro setf astro]])
 
-vim.opt.spelllang = { "en_us", "es" }
+vim.opt.spelllang = { "es" }
 -- vim.opt.spell = true
-vim.api.nvim_create_autocmd("FileType", {
-	pattern = { "html", "markdown", "text" },
-	callback = function()
-		vim.opt_local.spell = true
-	end,
-})
 
 vim.api.nvim_create_autocmd("TextYankPost", {
-	desc = "Highlight when yanking (copying) text",
-	group = vim.api.nvim_create_augroup("kickstart-highlight-yank", { clear = true }),
-	callback = function()
-		vim.highlight.on_yank()
-	end,
+  desc = "Highlight when yanking (copying) text",
+  group = vim.api.nvim_create_augroup("kickstart-highlight-yank", { clear = true }),
+  callback = function()
+    vim.highlight.on_yank()
+  end,
 })
 
 vim.api.nvim_create_autocmd("BufEnter", {
-	pattern = "*",
-	callback = function()
-		vim.cmd("lua require('lazygit.utils').project_root_dir()")
-	end,
+  pattern = "*",
+  callback = function()
+    vim.cmd("lua require('lazygit.utils').project_root_dir()")
+  end,
 })
