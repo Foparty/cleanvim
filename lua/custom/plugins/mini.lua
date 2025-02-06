@@ -6,6 +6,7 @@ return {
       require("mini.surround").setup({})
       require("mini.ai").setup({ n_lines = 500 })
       require("mini.pairs").setup()
+      require("mini.splitjoin").setup()
     end,
   },
 }
