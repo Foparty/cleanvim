@@ -3,7 +3,13 @@ return {
   event = "VimEnter", -- Sets the loading event to 'VimEnter'
   config = function() -- This is the function that runs, AFTER loading
     require("which-key").setup({
-      preset = "helix",
+      -- preset = "helix",
+      preset = "modern",
+      sort = {
+        -- Sorting options
+        by = "key", -- Can be "key" or "value"
+        order = "asc", -- Can be "asc" or "desc"
+      },
     })
 
     -- Document existing key chains
@@ -17,7 +23,7 @@ return {
       { "<leader>k", group = "[H] more Git stuff" },
       { "<leader>l", group = "[L] Git / Sessions" },
       { "<leader>n", group = "[N]ew note or file" },
-      { "<leader>s", group = "[S]ubstitute current work locally / globaly" },
+      { "<leader>s", group = "[S]ubstitute R / SSymbols" },
       -- { "<leader>t", group = "[T]oggle Pencil" },
     })
   end,
