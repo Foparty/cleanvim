@@ -50,10 +50,10 @@ vim.keymap.set("n", "<up>", function()
 	end
 end, { desc = "Close split or open file explorer if last window" })
 
-vim.keymap.set("n", "<C-e>", function()
-	vim.cmd("update") -- Save changes (if any)
-	vim.cmd("Oil") -- Open the file explorer (assuming Oil is a plugin or command)
-end, { desc = "Close split or open file explorer if last window" })
+-- vim.keymap.set("n", "<C-e>", function()
+-- 	vim.cmd("update") -- Save changes (if any)
+-- 	vim.cmd("Oil") -- Open the file explorer (assuming Oil is a plugin or command)
+-- end, { desc = "Close split or open file explorer if last window" })
 vim.keymap.set("n", "<right>", "<C-w>v", { desc = "Split window vertically" })
 vim.keymap.set("n", "<down>", "<C-w>s", { desc = "Split window horizontally" })
 vim.keymap.set("n", "<left>", ":up!<CR>", { desc = "Save current file" }) -- Note: This command seems incorrect, should be ":w<CR>"
@@ -172,7 +172,7 @@ end
 
 vim.keymap.set("n", "<leader>S", toggle_spell, { desc = "[S]pell check" })
 
--- vim.keymap.set("n", "<leader>nh", "<cmd>Noice<cr>", { desc = "Notification History" })
+vim.keymap.set("n", "<leader>nh", "<cmd>Noice<cr>", { desc = "Notification History" })
 
 -- NOTE: Vgit mappings here cause in the keymaps table i dont like
 local vgit = require("vgit")
