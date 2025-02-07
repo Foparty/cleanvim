@@ -2,6 +2,7 @@ return {
   -- lazy.nvim
   {
     "folke/snacks.nvim",
+    enabled = false,
     ---@type snacks.Config
     opts = {
       explorer = {
@@ -14,9 +15,6 @@ return {
         sources = {
           explorer = {
             auto_close = true,
-            layout = {
-              cycle = false,
-            },
             -- your explorer picker configuration comes here
             -- or leave it empty to use the default settings
           },
