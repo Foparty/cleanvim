@@ -98,3 +98,8 @@ vim.api.nvim_create_autocmd("BufEnter", {
     vim.cmd("lua require('lazygit.utils').project_root_dir()")
   end,
 })
+vim.filetype.add({
+  extension = {
+    mdx = "mdx",
+  },
+})

@@ -65,7 +65,8 @@ vim.keymap.set("n", "<leader>ka", ":%bd<CR>", { desc = "[K]ill [A]ll buffers" })
 vim.keymap.set("t", "<Esc><Esc>", "<C-\\><C-n>", { desc = "Exit terminal mode" })
 
 -- File Operations
-vim.keymap.set("n", "<leader><leader>x", ":so %<CR>", { desc = "Source current file" })
+-- vim.keymap.set("n", "<leader><leader>x", ":so %<CR>", { desc = "Source current file" })
+vim.keymap.set("n", "<leader>sf", ":so %<CR>", { desc = "Source current file" })
 
 -- plugins system
 vim.keymap.set("n", "<leader>lz", ":Lazy<CR>")

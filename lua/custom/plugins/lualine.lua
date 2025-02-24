@@ -33,7 +33,8 @@ return {
           lualine_a = { "mode" },
           lualine_b = { "branch", "diff", "diagnostics" },
           lualine_c = {
-            "filename", --[["filesize"]]
+            { "filename", path = 1 },
+            --[["filesize"]]
           },
           lualine_x = {
             --[["encoding",]]
