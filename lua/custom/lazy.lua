@@ -49,7 +49,7 @@ require("lazy").setup({
   },
 })
 
-vim.cmd([[colorscheme catppuccin]])
+vim.cmd([[colorscheme poimandres]])
 -- vim.cmd([[colorscheme tokyonight]])
 -- vim.cmd([[colorscheme zenbones]])
 -- vim.cmd([[colorscheme github_dark_high_contrast]])
