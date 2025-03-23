@@ -1,6 +1,7 @@
 return {
   {
     "folke/noice.nvim",
+    enabled = false,
     event = "VeryLazy",
     opts = {
       -- add any options here
@@ -20,7 +21,7 @@ return {
     config = function()
       require("notify").setup({
         merge_duplicates = true,
-        background_colour = "#000000", -- Setting this to black or any other color you prefer
+        -- background_colour = "#000000", -- Setting this to black or any other color you prefer
         timeout = 100,
       })
     end,
