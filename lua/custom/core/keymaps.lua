@@ -174,9 +174,3 @@ end
 vim.keymap.set("n", "<leader>S", toggle_spell, { desc = "[S]pell check" })
 
 -- vim.keymap.set("n", "<leader>.", "<cmd>Noice<cr>", { desc = "Notification History" })
-
--- NOTE: Vgit mappings here cause in the keymaps table i dont like
-local vgit = require("vgit")
-vim.keymap.set("n", "<leader>gp", vgit.buffer_hunk_preview, { desc = "[G]it [P]review" })
-vim.keymap.set("n", "<leader>gf", vgit.buffer_diff_preview, { desc = "[G]it [F]ile dif" })
-vim.keymap.set("n", "<leader>gd", vgit.project_diff_preview, { desc = "[G]it [D]iff of project" })
