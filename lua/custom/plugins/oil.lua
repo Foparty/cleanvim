@@ -1,7 +1,7 @@
 return {
   {
     "stevearc/oil.nvim",
-    enabled = false,
+    enabled = true,
     config = function()
       local oil = require("oil")
       oil.setup({
@@ -28,7 +28,8 @@ return {
         },
       })
       -- vim.keymap.set("n", "-", oil.toggle_float, {})
-      vim.keymap.set("n", "<C-e>", oil.toggle_float, {})
+      -- vim.keymap.set("n", "<C-q>", oil.toggle_float, {})
+      vim.keymap.set("n", "<leader>e", "<cmd>Oil<CR>", {})
     end,
     -- Optional dependencies
     -- dependencies = { { "echasnovski/mini.icons", opts = {} } },
