@@ -37,7 +37,7 @@ vim.keymap.set("n", "<C-l>", "<C-w><C-l>", { desc = "Move focus to right window"
 vim.keymap.set("n", "<C-j>", "<C-w><C-j>", { desc = "Move focus to lower window" })
 vim.keymap.set("n", "<C-k>", "<C-w><C-k>", { desc = "Move focus to upper window" })
 vim.keymap.set("n", "<leader>q", ":wqa!<CR>", { desc = "Save all and [q]uit" })
-vim.keymap.set("n", "<leader>e", ":up<CR>:Oil<CR>", { desc = ":Ex" })
+-- vim.keymap.set("n", "<leader>e", ":up<CR>:Oil<CR>", { desc = ":Ex" })
 --
 vim.keymap.set("n", "<up>", function()
   local win_count = vim.fn.winnr("$") -- Get the total number of windows
@@ -173,7 +173,7 @@ end
 
 vim.keymap.set("n", "<leader>S", toggle_spell, { desc = "[S]pell check" })
 
-vim.keymap.set("n", "<leader>nh", "<cmd>Noice<cr>", { desc = "Notification History" })
+-- vim.keymap.set("n", "<leader>.", "<cmd>Noice<cr>", { desc = "Notification History" })
 
 -- NOTE: Vgit mappings here cause in the keymaps table i dont like
 local vgit = require("vgit")
