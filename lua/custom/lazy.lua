@@ -50,6 +50,7 @@ require("lazy").setup({
 })
 
 -- vim.cmd([[colorscheme vesper]])
-vim.cmd([[colorscheme tokyonight]])
+-- vim.cmd([[colorscheme tokyonight]])
+vim.cmd([[colorscheme github_dark_high_contrast]])
 -- vim.cmd([[colorscheme zenbones]])
 -- vim.cmd([[colorscheme github_dark_high_contrast]])
