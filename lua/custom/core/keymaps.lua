@@ -175,3 +175,5 @@ vim.keymap.set("n", "<leader>S", toggle_spell, { desc = "[S]pell check" })
 
 vim.keymap.set("n", "<leader>.", "<cmd>Noice<cr>", { desc = "Notification History" })
 vim.keymap.set("n", "<leader>nh", "<cmd>Noice<cr>", { desc = "Notification History" })
+
+vim.keymap.set("n", "cd", vim.lsp.buf.rename, { desc = "[c]hange [d]efinition" })
