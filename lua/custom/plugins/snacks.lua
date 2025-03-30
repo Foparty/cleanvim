@@ -9,8 +9,8 @@ return {
       explorer = {
         replace_netrw = true,
       },
-      notify = { enabled = true },
-      notifier = { enabled = true },
+      -- notify = { enabled = true },
+      -- notifier = { enabled = true },
       terminal = { enabled = true },
       picker = {
         layout = {
@@ -65,6 +65,13 @@ return {
         "<leader>,",
         function()
           Snacks.picker.buffers()
+        end,
+        desc = "Buffers",
+      },
+      {
+        "<leader>fk",
+        function()
+          Snacks.picker.keymaps()
         end,
         desc = "Find Files",
       },
