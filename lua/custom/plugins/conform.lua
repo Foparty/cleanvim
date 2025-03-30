@@ -36,6 +36,8 @@ return {
         lua = { "stylua" },
         javascript = { { "prettierd", "prettier" } },
         typescript = { { "prettierd", "prettier" } },
+        html = { "prettier" },
+        css = { "prettier" },
         -- Add other file types as required
       },
       formatters = {
