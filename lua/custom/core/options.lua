@@ -113,3 +113,73 @@ vim.filetype.add({
     mdx = "mdx",
   },
 })
+
+-- NOTE: Here comes the stausbar config
+-- --
+-- -- Define highlight groups with a better-looking color palette
+-- vim.api.nvim_set_hl(0, "StatusLineNormal", { bg = "#2563EB", fg = "#e8f0fe", bold = true })
+-- vim.api.nvim_set_hl(0, "StatusLineInsert", { bg = "#DC2626", fg = "#ffffff", bold = true })
+-- vim.api.nvim_set_hl(0, "StatusLineVisual", { bg = "#50ABE7", fg = "#202124", bold = true })
+-- vim.api.nvim_set_hl(0, "StatusLineCommand", { bg = "#FBBF24", fg = "#000000", bold = true })
+-- vim.api.nvim_set_hl(0, "StatusLineReplace", { bg = "#d93025", fg = "#ffffff", bold = true })
+--
+-- -- Configuration table mapping modes to status line highlights and display text
+-- local mode_config = {
+-- 	n = { hl = "StatusLineNormal", text = "[N]" }, -- Normal mode
+-- 	i = { hl = "StatusLineInsert", text = "[I]" }, -- Insert mode
+-- 	v = { hl = "StatusLineVisual", text = "[V]" }, -- Visual mode (character-wise)
+-- 	V = { hl = "StatusLineVisual", text = "[VL]" }, -- Visual mode (line-wise)
+-- 	["\22"] = { hl = "StatusLineVisual", text = "[VB]" }, -- Visual mode (block-wise, Ctrl-V)
+-- 	c = { hl = "StatusLineCommand", text = "[C]" }, -- Command mode
+-- 	r = { hl = "StatusLineReplace", text = "[R]" }, -- Replace mode
+-- }
+--
+-- local git_status_cache = {}
+--
+-- -- Function to update the Git status cache for the current buffer
+-- local function update_git_status()
+-- 	local bufnr = vim.api.nvim_get_current_buf()
+-- 	local branch = vim.fn.system("git branch --show-current 2>/dev/null"):gsub("\n", "")
+-- 	if branch == "" or vim.v.shell_error ~= 0 then
+-- 		git_status_cache[bufnr] = ""
+-- 		return
+-- 	end
+--
+-- 	local status = ""
+-- 	local diff = vim.fn.system("git status --porcelain 2>/dev/null")
+-- 	if diff ~= "" then
+-- 		local added = diff:match("A") and "+" or ""
+-- 		local modified = diff:match("M") and "*" or ""
+-- 		local deleted = diff:match("D") and "-" or ""
+-- 		status = " " .. added .. modified .. deleted
+-- 	end
+-- 	git_status_cache[bufnr] = " " .. branch .. status
+-- end
+--
+-- local function get_git_status()
+-- 	local bufnr = vim.api.nvim_get_current_buf()
+-- 	if not git_status_cache[bufnr] then
+-- 		update_git_status()
+-- 	end
+-- 	return git_status_cache[bufnr] or ""
+-- end
+--
+-- -- Function to generate the status line dynamically
+-- function _G.statusline()
+-- 	-- Get the current mode
+-- 	local mode = vim.api.nvim_get_mode().mode
+-- 	-- Select the mode configuration, default to Normal if mode is unrecognized
+-- 	local config = mode_config[mode] or mode_config.n
+-- 	-- Get the Git branch
+-- 	local git_info = get_git_status()
+-- 	-- Construct the status line string with the mode-specific highlight
+-- 	return "%#" .. config.hl .. "#  " .. config.text .. " " .. git_info .. "  %<%t %m %y %= %l:%c %P"
+-- end
+--
+-- -- Set the statusline option to use the Lua function
+-- vim.o.statusline = "%!v:lua.statusline()"
+-- vim.api.nvim_create_autocmd({ "BufEnter", "BufWritePost" }, {
+-- 	callback = function()
+-- 		update_git_status()
+-- 	end,
+-- })
