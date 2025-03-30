@@ -19,6 +19,9 @@ return {
           "markdown_inline",
           "glimmer_javascript",
           "glimmer_typescript",
+          "html",
+          "css",
+          "json",
         },
         incremental_selection = {
           enable = true,
