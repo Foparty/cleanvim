@@ -13,6 +13,7 @@ vim.g.netrw_icons = 1
 --Make line numbers default
 vim.opt.number = true
 vim.opt.relativenumber = true
+vim.opt.wrap = false
 
 vim.opt.tabstop = 2      -- 2 spaces for tabs (prettier default)
 vim.opt.softtabstop = 2  -- 2 spaces for indent width (prettier default)
@@ -83,7 +84,7 @@ vim.cmd([[au BufNewFile,BufRead *.astro setf astro]])
 
 vim.opt.spelllang = { "es" }
 -- vim.opt.spell = true
-vim.diagnostic.config({ virtual_lines = true })
+vim.diagnostic.config({ virtual_text = true })
 
 vim.api.nvim_create_autocmd("TextYankPost", {
   desc = "Highlight when yanking (copying) text",
