@@ -13,7 +13,11 @@ return {
             and vim.bo.buftype ~= "prompt"
             and vim.b.completion ~= false
       end,
-      keymap = { preset = "default" },
+      keymap = {
+        preset = "default",
+        ["<C-y>"] = { "select_and_accept", "fallback" },
+        ["<Tab>"] = { "select_and_accept", "fallback" },
+      },
       completion = {
         menu = { border = "rounded" },
         documentation = { window = { border = "rounded" } },
