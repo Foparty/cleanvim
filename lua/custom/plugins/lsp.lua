@@ -116,7 +116,8 @@ return {
         end,
       })
       -- end of attach function
-      local capabilities = require("blink.cmp").get_lsp_capabilities()
+      local old_capabilities = vim.lsp.protocol.make_client_capabilities()
+      local capabilities = require("blink.cmp").get_lsp_capabilities(old_capabilities)
       require("lspconfig").lua_ls.setup({ capabilities = capabilities })
 
       local servers = {
