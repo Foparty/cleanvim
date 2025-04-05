@@ -184,3 +184,4 @@ vim.filetype.add({
 -- 		update_git_status()
 -- 	end,
 -- })
+vim.o.winborder = "rounded"
