@@ -119,7 +119,11 @@ return {
       local old_capabilities = vim.lsp.protocol.make_client_capabilities()
       local capabilities = require("blink.cmp").get_lsp_capabilities(old_capabilities)
       require("lspconfig").lua_ls.setup({ capabilities = capabilities })
-
+      require("lspconfig").ts_ls.setup({})
+      require("lspconfig").eslint.setup({})
+      require("lspconfig").cssls.setup({})
+      require("lspconfig").html.setup({})
+      require("lspconfig").tailwindcss.setup({})
       local servers = {
         -- clangd = {},
         -- gopls = {},
