@@ -1,3 +1,5 @@
+vim.g.astro_typescript = "enable"
+vim.g.astro_stylus = "enable"
 vim.g.mapleader = " "
 vim.g.maplocalleader = " "
 

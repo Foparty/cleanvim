@@ -66,7 +66,9 @@ return {
     },
     config = function(_, opts)
       local chat = require("CopilotChat")
-
+      -- chat.setup({
+      --   model = "gpt-4",
+      -- })
       vim.api.nvim_create_autocmd("BufEnter", {
         pattern = "copilot-chat",
         callback = function()

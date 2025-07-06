@@ -21,6 +21,7 @@ return {
 							ratio = 0.4,
 						},
 					},
+					copilot_model = "gpt-4",
 					suggestion = {
 						enabled = true,
 						auto_trigger = true,

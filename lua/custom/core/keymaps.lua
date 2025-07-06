@@ -46,7 +46,7 @@ vim.keymap.set("n", "<up>", function()
     pcall(vim.cmd, "close")          -- Safely close the current window (ignore errors)
   else
     vim.cmd("update")                -- Save changes (if any)
-    vim.cmd("Oil")                   -- Open the file explorer (assuming Oil is a plugin or command)
+    -- vim.cmd("Oil")                   -- Open the file explorer (assuming Oil is a plugin or command)
   end
 end, { desc = "Close split or open file explorer if last window" })
 
